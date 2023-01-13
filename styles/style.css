@@ -1,0 +1,283 @@
+:root {
+    --primary-font: 'Poppins', sans-serif;
+    --primary-color: #F3F1FF;
+    --blueviolet: #562EFF;
+    --gray: #9F9F9F;
+    --darkpeach: #ED6B4F;
+    --ratedstar: #FFC014;
+    --notratedstar: #AEAEAE;
+}
+
+/* --------------Common styles or utilities-------------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: var(--primary-font);
+    background-color: var(--primary-color);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+hr {
+    border: 1px solid #D1D1D1;
+}
+
+.container {
+    background-color: white;
+    width: 870px;
+    padding: 31px;
+    margin-top: 21px;
+    border-radius: 5px;
+}
+
+/* --------------Header-------------- */
+.header {
+    display: flex;
+    justify-content: center;
+    background-color: var(--blueviolet);
+    color: white;
+}
+
+.header-content {
+    width: 850px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+nav img {
+    height: 51px;
+    width: 51px;
+}
+
+.header-content nav .logo-title {
+    font-weight: 500;
+    font-size: 24px;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+}
+
+nav li {
+    list-style: none;
+    margin-left: 36px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* --------------Top players styles-------------- */
+.top-player {
+    margin-bottom: 30px;
+}
+
+.section-title {
+    font-weight: 500;
+    font-size: 24px;
+    color: var(--blueviolet);
+    padding-bottom: 40px;
+}
+
+.players {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: 29px;
+}
+
+.player {
+    display: flex;
+    align-items: center;
+}
+
+.player img {
+    height: 56px;
+    width: 56px;
+}
+
+.player-name {
+    margin-left: 16px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* --------------Top blog styles-------------- */
+.top-blog {
+    margin-top: 30px;
+}
+
+.blogs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 26px;
+}
+
+.blog {
+    display: flex;
+}
+
+.blog .thumbnail img {
+    width: 177px;
+    height: 117px;
+}
+
+.blog-info {
+    margin-left: 16px;
+}
+
+.blog-title {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 34px;
+    padding-bottom: 6px;
+}
+
+.blog-author {
+    font-size: 16px;
+    color: var(--gray);
+}
+
+
+.blog-author a {
+    color: var(--blueviolet);
+    text-decoration: none;
+}
+
+/* --------------Latest Course styles-------------- */
+
+.courses {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 24px;
+    justify-content: space-around;
+}
+
+.course {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
+    padding: 15px;
+    border-radius: 8px;
+
+}
+
+.course .course-banner img {
+    width: 224px;
+    height: 104px;
+}
+
+.course-title {
+    font-weight: 500;
+    font-size: 20.03px;
+    color: #1E1E1E;
+}
+
+.course-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.course-info span {
+    color: #A2A2A2;
+    font-size: 14.5px;
+}
+
+.course-instructor {
+    color: var(--darkpeach);
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.fa-star {
+    font-size: 12px;
+}
+
+.fa-star.filled {
+    color: var(--ratedstar);
+}
+
+.fa-star.empty {
+    color: var(--notratedstar);
+    opacity: 0.25;
+}
+
+.duration {
+    border-radius: 15px;
+    color: #FF4A60;
+    background-color: #FFE4E8;
+    font-size: 14.5px;
+    padding: 4px;
+}
+
+/* --------------Media Queries-------------- */
+
+/* Mobile Devices */
+@media only screen and (max-width: 688px) {
+    .header-content {
+        width: 100%;
+    }
+
+    nav,
+    .header-content {
+        flex-direction: column;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .players,
+    .blogs,
+    .courses {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .player {
+        flex-direction: column;
+    }
+}
+
+/* Tablet devices */
+@media only screen and (min-width: 689px) and (max-width: 992px) {
+    .header-content {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .players {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .blogs,
+    .courses {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .course {
+        display: flex;
+    }
+
+    .course-detail {
+        margin-left: 30px;
+    }
+}
